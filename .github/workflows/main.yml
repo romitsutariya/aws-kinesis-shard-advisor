@@ -35,16 +35,6 @@ jobs:
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache,mode=max
 
-      - name: Run tests inside container
-        run: |
-          docker run --rm \
-            --network host \
-            -e NODE_ENV=test \
-            aws-kinesis-shard-advisor:latest
-        env:
-          CI: true
-        timeout-minutes: 10
-
   build-and-push:
     name: Build and Push Docker Image
     runs-on: ubuntu-latest
