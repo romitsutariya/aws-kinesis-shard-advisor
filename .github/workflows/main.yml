@@ -28,7 +28,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          target: test
           tags: aws-kinesis-shard-advisor:latest
           platforms: linux/amd64
           load: true
